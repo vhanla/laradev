@@ -1,0 +1,266 @@
+﻿The MIT License (MIT)
+
+Copyright (c) 2017 Victor Alberto Gil <vhanla>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+LaraDev (previous name DevPortable and AMPortable)
+---
+changelog:
+---------
+TODO:
+  - SSL MUtex commented out, maybe it is required on previous apache versions
+  - Fix PHP save buffer
+  - Fix environment variables loaded on formcreate setting php path
+    and also affects switching from php 5 ot php 7
+    because restarting server with changed php version still retains old phppath
+    it also lefts setting php ini with maybe this configuration
+    http://forum.wampserver.com/read.php?2,133667,135487
+
+  - Add columns to set virtual host name
+  - Crear certificados de acuerdo a cada virtual host
+    usando:
+    set OPENSSL_CONF=c:\[PATH TO YOUR OPENSSL DIRECTORY]\bin\openssl.cnf
+    http://jaspreetchahal.org/warning-cant-open-config-file-usrlocalsslopenssl-cnf/
+
+    ..\bin\openssl.exe req -new -newkey rsa:1024 -days 365 -nodes -x509 -subj "/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.ejemplo.dev" -keyout amportable.key -out amportable.cert -passout pass:amportablepassword
+    http://superuser.com/a/226229/276253
+
+2024-04-01
+  - Add internet connection detection (DW.Connectivity)
+
+2024-03-06
+  - Remove custom icon handler
+
+2023-08-10
+  - Detect PowerToys' Hosts editor at %PROGRAMFILES%\PowerToys\WinUI3Apps\PowerToys.Hosts.exe
+  - Add function Is64BitOS: Boolean; in functions.pas to detect 64 bit OS from this 32bit application
+  - Add PHP 8 support now LoadModule just looks for php_module instead of php8_module, 8 is not necessary on Apache2.4+ at least from 8+
+  - Add Apache Httpd Log file viewer and httpd.exe output viewer
+  - Add TDosCommand (httpdprocess) to handle httpd.exe process
+
+2021-10-17
+  - Restored CustomTitlebar since Delphi 10.4.2 has a bug in it that crashes the window specially while switching back/forth directx fullscreen applications/games (alt-tab)
+    WM_NCxx messages used instead
+
+2021-09-21
+  - Back to SynEdit, since BCEditor was unmantained long ago, PS co TODO
+2020-02-12
+  - Update to newer BCEditor
+  - Fixed listing projects
+
+2018-06-13
+  - Temporarily disabled wm_hittest to allow resize with borders and
+    allowed bsSizable as well than added back maximize on borderIcons property
+    in order to maximize specially when we use developer tools
+
+2018-02-06
+  * Workaround for Apache 2.2 and 2.4 compatibility
+    # backwards compatibility with apache 2.2
+    Order allow,deny
+    Allow from all
+
+    # forward compatibility with apache 2.4
+    Require all granted
+    Satisfy Any
+
+2018-02-04
+  * Fixed popup menu image list for projects
+  * Fixed memory leak of editors menuitems
+  + Added event for editor popupmenu in order to open projects in the editor chosen
+
+2018-01-23
+  + Added PHP INI editor
+
+2018-01-22
+  * Fixed ShowModalDimmed to use client area correctly to adjust the shadow.
+  + Virtual String Tree for Editors now works using JSON from settings.json
+
+2018-01-21
+  + ShowModalDimmed added from my ModernUI project
+  * Replaced and updated ReadINI and WriteINI to ReadSettings and WriteSettings
+    now using JSON instead.
+
+2018-01-14
+  - Host editor improved and domain editor too [TODO]
+
+2018-01-13
+  - Added LibSASS parser just to test it, incase it works better in the future
+  - Compiled libsass 3.4.5 x86 with visual studio 14
+
+2018-01-12
+  - Icons from timagelist with transparency to be used on our custom buttons TXButton
+
+2018-01-05
+  - Added mail catcher Theary
+  - Virtual String Tree replacing listbox
+2018-01-03
+  - Rearrange into different units.
+  - Projects unit created to handle all related to projects
+
+2017-12-20
+  - Virtual String Tree for more details
+
+2017-12-18
+  - UI Redesign
+
+2017-04-23
+  - Add more than one editor
+
+2016-11-28
+  - Add Composer's vendor binary path
+
+2016-09-21
+  - Replaced option/menu item to open console using Cmder
+2016-09-19
+  - Added COMPOSER_HOME environment variable to save GLOBAL files to devtools\extra\composer\repo
+
+2016-05-13
+  - Adding Caddyserver support
+
+2015-10-07
+  - Adding PHP 7 support
+
+2015-05-23
+  - Fixed Splash, in order to override correctly stat function from streamadapter in the new Delphi XE8
+  - Changed HotKey Win+A to Win+N, since it has been blocked in Windows 10
+
+2014-08-25- 2014-08-29
+  - Added routine in php ini creation to also create temp directory
+  - Disabled xdebug for now
+  - NOTA: Algunas faltas de configuraci�n:
+    falta agregar index.php a INDEX
+    en PHP.INI, crear desde la plantilla .development como php.ini
+    habilitar curl, openssl (para laravel), pdo_mysql y otras, sino no funciona bien
+  - ADDED REQUIRE ALL GRANTED for Apache 2.4 in virtual hosts directory permissions
+  - There is some issues with SSL module with this new version 2.4 apache
+  - Updating the way to modify apache httpd.conf
+  - Changed AddType to AddHandler, since the first one tells the browser while the another tells the server
+  - TODO: aliases left, it needs to be fixed
+      Alias /icons/ "iconos"
+      <Directory "iconos">
+      Alias /www "vedoble"
+      <Directory "vedoble">
+      Alias /dev "dev"
+      <Directory "dev">
+      ScriptAlias /cgi-bin/ "cgi-bin"
+      <Directory "cgi-bin">
+      SSL path not added yet
+  http://www.chromium.org/administrators/policy-list-3 this is for allowing chrome extensions from any domain :P
+
+
+2014-02-18
+  - SSL support to Apache2
+    http://stackoverflow.com/questions/4221874/how-do-i-create-https-for-localhost-apache
+    http://wiki.apache.org/httpd/NameBasedSSLVHostsWithSNI
+    http://www.rackspace.com/knowledge_center/article/serving-secure-sites-with-sni-on-apache
+    http://www.digicert.com/ssl-support/apache-multiple-ssl-certificates-using-sni.htm
+
+2012-11-29
+  - Changed priority
+  - Fix systray hidden when explorer restarts
+2012-08-27
+  - Show warning if hosts file doesn't contain the domain to be launched
+  ... needs to refine
+
+2012-08-26
+  - Add custom Hotkeys to show AMPortable WIN_A to show it centered in screen
+  - Add local hotkeys to switch among panels:
+    ctrl-s : settings panel
+    ctrl-p : projects panel
+    ctrl-m : monitor panel
+
+2012-08-17
+  - Added OnMessage event for FWebSocket in order to response commands
+    getProjectsList : returns a json formatted list of our projects so the extension
+                      finds out if a selected url is indeed a project of our amportable
+  - Added API to interface with WebSockets and AMPortable features
+  - Added stop server on exit, nobody else is going to use it
+2012-08-16
+  - Added folder monitor and websockets manager
+    fixed bug on monitoring after creating vhost.ini with admin priveleges
+    needs to be included in translation
+    needt to see if server exists
+    needs to clear memo log
+NOTUPLOADEDYET
+2012-08-12
+  - Add resource strings and Kryvichs delphi localizer
+  - English Language support by default is spanish
+  - Fixed bug for incompatibilities in subdirectory inside www folder
+    www and dev which are used for amportable devtools and alias features
+  - SubStr added to get domain name correctly from popup caption
+2012-08-09
+  - Detect OS Language
+2012-07-27
+  - Added Paths for easy extractfilepath
+  - Added hoste.exe to devtools in order to manage hosts file
+  - Virtual Hosts can be created with popupmenu
+  - It can now restart the server
+2012-07-22
+  - Added vhosts support alpha stage
+  - Added extra env path to devtools directory
+    just place your extra tools to ddevtools/extra
+    notice that each tool have to be inside its own directory inside
+    that directory
+2012-07-14
+  - Added button to edit PHP.INI with Notepad
+  - Added button to edit HOSTS with Notepad with elevated privileges (runasadmin)
+  - Added option to open console with admin privileges (use shift)
+
+2012-07-13
+  - Added icons to projects contextual menu
+    for easy usage
+  - Added support to load custom icons from our projects folder (favicon.ico)
+    exception avoided if bad icon format
+  - Added remember Projects panel
+2012-07-12
+  - Added MySQL bin to PATH
+
+2012-06-30
+  - Fixed PATH for PHP thanks to SetEnvironMent
+  - Fixed xdebug path
+2012-06-23
+  - Added console open support thanks to ACMD I wrote before
+
+2012-06-22
+ - Added context menu to open projects in any installed webbrowser
+ - Items added to context menu shows its icons
+ - Added support to open folders with sublime text 2
+ - Autodetect Chrome to launch dev center
+2012-06-20
+ - Added context menu option (open root directory)
+ - Added PHPInfo button
+ - Fixed launching projects if not apache running
+
+2012-06-12
+ - Added dev/ path for content/devtools/
+2012-06-11
+ - Fixed item select on projects list (right clicking works properly)
+    onmousedown event for both lists handle them.
+ - Double click to those lists will open them on the current web browser
+   instead of opening its folder
+   Shift+DoubleClik will make open its folder now
+ - Create new project option added to popupmenu in listprojects
+ - Added option to show splash screen only if the users wants it
+2012-06-05
+Added tpanel with launcher options for my projects
+2012-06-04
+Form now looks like the Activity center tray icon popup
+
+2012-01-14
+Added support for an alias path called www to use a different path if needed
