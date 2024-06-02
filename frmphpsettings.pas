@@ -122,6 +122,7 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  EnableImmersiveDarkMode(True);
   PHPIniText := TStringList.Create;
   vstPHP.NodeDataSize := SizeOf(Tinidata);
   btnEditMode.Caption := R_phpini_text;

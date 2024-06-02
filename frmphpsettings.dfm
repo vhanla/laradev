@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  StyleElements = [seFont, seClient]
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
@@ -24,8 +25,6 @@ object Form1: TForm1
     ActivePage = tbsVisual
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 451
-    ExplicitHeight = 365
     object tbsVisual: TTabSheet
       Caption = 'Visual'
       object vstPHP: TVirtualStringTree
@@ -148,8 +147,6 @@ object Form1: TForm1
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 365
-    ExplicitWidth = 451
     object btnSave: TButton
       Left = 287
       Top = 16
