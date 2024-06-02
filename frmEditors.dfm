@@ -1,6 +1,7 @@
 object wndEditors: TwndEditors
   Left = 0
   Top = 0
+  BorderIcons = [biMinimize, biMaximize]
   BorderStyle = bsToolWindow
   Caption = 'Editor'
   ClientHeight = 150
@@ -11,7 +12,9 @@ object wndEditors: TwndEditors
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  StyleElements = [seFont, seClient]
   OnClose = FormClose
+  OnCreate = FormCreate
   TextHeight = 13
   object edImage: TImage
     Left = 270

@@ -23,6 +23,7 @@ type
     procedure btnCancelClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure edPathChange(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -99,6 +100,11 @@ end;
 procedure TwndEditors.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   NotModal := True;
+end;
+
+procedure TwndEditors.FormCreate(Sender: TObject);
+begin
+  EnableImmersiveDarkMode(True);
 end;
 
 end.
