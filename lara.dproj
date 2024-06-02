@@ -74,7 +74,7 @@
         <Icon_MainIcon>$(BDS)\bin\delphi_PROJECTICON.ico</Icon_MainIcon>
         <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
-        <Custom_Styles>WinDark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WinDark.vsf;&quot;Windows11 Impressive Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Impressive_Dark.vsf&quot;;&quot;Windows11 Modern Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11.Dark.vsf&quot;;&quot;Windows11 Polar Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Polar_Dark.vsf&quot;;&quot;Windows11 Polar Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Polar_Light.vsf&quot;;&quot;Laravel Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Laravel.vsf&quot;;&quot;Laravel Dark 11|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Laravel Dark 11.vsf&quot;;&quot;Windows10 BlackPearl|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlackPearl.vsf&quot;;&quot;Spotify Dark Theme|VCLSTYLE|$(BDSCOMMONDIR)\Styles\SpotifyStyle.vsf&quot;</Custom_Styles>
+        <Custom_Styles>WinDark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\WinDark.vsf;&quot;Windows11 Impressive Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Impressive_Dark.vsf&quot;;&quot;Windows11 Modern Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11.Dark.vsf&quot;;&quot;Windows11 Polar Dark|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Polar_Dark.vsf&quot;;&quot;Windows11 Polar Light|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows11_Polar_Light.vsf&quot;;&quot;Laravel Dark 11|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Laravel Dark 11.vsf&quot;;&quot;Windows10 BlackPearl|VCLSTYLE|$(BDSCOMMONDIR)\Styles\Windows10BlackPearl.vsf&quot;;&quot;Spotify Dark Theme|VCLSTYLE|$(BDSCOMMONDIR)\Styles\SpotifyStyle.vsf&quot;</Custom_Styles>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
         <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
@@ -164,6 +164,8 @@ $(PostBuildEvent)]]></PostBuildEvent>
         <DCCReference Include="peutils.pas"/>
         <DCCReference Include="processhandler.pas"/>
         <DCCReference Include="DataTransferManagerHelper.pas"/>
+        <DCCReference Include="php.pas"/>
+        <DCCReference Include="laraAppsHelper.pas"/>
         <RcItem Include="logo.png">
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>SPLASH</ResourceId>
@@ -174,6 +176,7 @@ $(PostBuildEvent)]]></PostBuildEvent>
             <ResourceType>RCDATA</ResourceType>
             <ResourceId>Resource_1</ResourceId>
         </RcItem>
+        <None Include="README.md"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
@@ -324,6 +327,12 @@ $(PostBuildEvent)]]></PostBuildEvent>
                     </Platform>
                 </DeployFile>
                 <DeployFile LocalName="I:\AMPortable2\AMPortable.exe" Configuration="Release" Class="ProjectOutput"/>
+                <DeployFile LocalName="README.md" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile LocalName="changelog.log" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
                         <RemoteDir>.\</RemoteDir>

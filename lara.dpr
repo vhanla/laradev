@@ -34,7 +34,9 @@ uses
   env in 'env.pas',
   peutils in 'peutils.pas',
   processhandler in 'processhandler.pas',
-  DataTransferManagerHelper in 'DataTransferManagerHelper.pas';
+  DataTransferManagerHelper in 'DataTransferManagerHelper.pas',
+  php in 'php.pas',
+  laraAppsHelper in 'laraAppsHelper.pas';
 
 {$R *.res}
 
@@ -42,7 +44,13 @@ var
   RvHandle: HWND;
   ini: tinifile;
 begin
+  {$IFDEF DEBUG}
+//  ReportMemoryLeaksOnShutdown := True;
+  {$ENDIF }
+
+
   RvHandle:=FindWindow('AMPortable',nil);
+
   if RvHandle > 0 then exit;
   Application.Initialize;
   //FreeLocalizer.AutoTranslate:=True;
