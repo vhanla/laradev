@@ -10,6 +10,7 @@ uses
 type
   TframeBrowser = class(TForm)
     EmbeddedWB1: TEmbeddedWB;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -22,5 +23,10 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TframeBrowser.FormCreate(Sender: TObject);
+begin
+  EnableImmersiveDarkMode(True);
+end;
 
 end.

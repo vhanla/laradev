@@ -10,8 +10,8 @@ object frameBrowser: TframeBrowser
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
-  PixelsPerInch = 96
+  StyleElements = [seFont, seClient]
+  OnCreate = FormCreate
   TextHeight = 13
   object EmbeddedWB1: TEmbeddedWB
     Left = 0
@@ -20,17 +20,12 @@ object frameBrowser: TframeBrowser
     Height = 387
     Align = alClient
     TabOrder = 0
-    Silent = False
     DisableCtrlShortcuts = 'N'
     UserInterfaceOptions = [EnablesFormsAutoComplete, EnableThemes]
     About = ' EmbeddedWB http://bsalsa.com/'
     PrintOptions.HTMLHeader.Strings = (
       '<HTML></HTML>')
     PrintOptions.Orientation = poPortrait
-    ExplicitLeft = 112
-    ExplicitTop = 43
-    ExplicitWidth = 300
-    ExplicitHeight = 150
     ControlData = {
       4C000000332E0000C61400000000000000000000000000000000000000000000
       000000004C000000000000000000000001000000E0D057007335CF11AE690800
