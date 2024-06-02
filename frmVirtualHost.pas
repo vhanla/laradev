@@ -431,6 +431,7 @@ end;
 
 procedure TfrmVirtualHost1.FormCreate(Sender: TObject);
 begin
+  EnableImmersiveDarkMode(True);
     //load commonpaths not trailing for the general purpose so adding \ is more convenient
   ProjectsPath:=ExtractFilePath(ParamStr(0))+'content\www';
   DevToolsPath:=ExtractFilePath(ParamStr(0))+'content\devtools';

@@ -1,6 +1,7 @@
 object frmVirtualHost1: TfrmVirtualHost1
   Left = 0
   Top = 0
+  BorderIcons = [biMinimize, biMaximize]
   BorderStyle = bsDialog
   Caption = 'Virtual Host'
   ClientHeight = 194
@@ -11,11 +12,10 @@ object frmVirtualHost1: TfrmVirtualHost1
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
-  OldCreateOrder = False
+  StyleElements = [seFont, seClient]
   OnClose = FormClose
   OnCreate = FormCreate
   OnShow = FormShow
-  PixelsPerInch = 96
   TextHeight = 13
   object lblVirtualHost: TLabel
     Left = 8
@@ -136,7 +136,7 @@ object frmVirtualHost1: TfrmVirtualHost1
     NewFolderName = 'New Folder'
     ParentColor = False
     ParentBackground = False
-    Path = 'C:\Users\vhanla\Documents\'
+    Path = 'C:\Users\vhanl\Documents\'
     SpecialFolders = []
     TabOrder = 5
   end
