@@ -15,9 +15,12 @@ DirectoryMonitor, DorWebSocket, Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls,
   frmBrowser, SynEdit, SynEditHighlighter, SynHighlighterWeb,
   SynHighlighterCSS, Vcl.Mask, scStyledForm, VirtualTrees.BaseAncestorVCL,
   VirtualTrees.BaseTree, VirtualTrees.AncestorVCL, CoolTrayIcon,
-  Vcl.TitleBarCtrls, UWP.Downloader, DW.Connectivity, DarkModeApi,
+  Vcl.TitleBarCtrls, UWP.Downloader, DW.Connectivity,
 
-  env, composer, madExceptVcl, System.Win.TaskbarCore, Vcl.Taskbar, Vcl.JumpList
+  env, composer, madExceptVcl, System.Win.TaskbarCore, Vcl.Taskbar, Vcl.JumpList,
+  fspTaskbarMgr, fspTaskbarPreviews, scControls, scGPControls,
+  fspTaskbarApi, fspControlsExt, processhandler, Vcl.Imaging.jpeg,
+  IconFontsImageListBase, IconFontsImageList
   ;
 
 const BUILDNUMBER = 180123;
@@ -106,7 +109,6 @@ type
     cbServer: TComboBox;
     Abrircarpetacon1: TMenuItem;
     SplitView1: TSplitView;
-    StackPanel1: TStackPanel;
     CardPanel1: TCardPanel;
     CardSettings: TCard;
     CardProjects: TCard;
@@ -147,11 +149,6 @@ type
     imglstSidebar: TImageList;
     PageControl2: TPageControl;
     TabSheet1: TTabSheet;
-    Sass: TTabSheet;
-    BCEditor1: TSynEdit;
-    BCEditor2: TSynEdit;
-    Button2: TButton;
-    Splitter1: TSplitter;
     pcSettings: TPageControl;
     tsGeneralSettings: TTabSheet;
     TabSheet4: TTabSheet;
@@ -170,11 +167,8 @@ type
     imglstBrowers: TImageList;
     TabSheet2: TTabSheet;
     Label5: TLabel;
-    LabeledEdit1: TLabeledEdit;
     tbsEnvPaths: TTabSheet;
     Label6: TLabel;
-    tbsWebCompiler: TTabSheet;
-    Label7: TLabel;
     btnApacheLog: TButton;
     SynCssSyn1: TSynCssSyn;
     LinkLabel1: TLinkLabel;
@@ -193,8 +187,12 @@ type
     dwnApache: TUWPDownloader;
     tbsSites: TTabSheet;
     MadExceptionHandler1: TMadExceptionHandler;
-    Taskbar1: TTaskbar;
     JumpList1: TJumpList;
+    fspTaskbarPreviews1: TfspTaskbarPreviews;
+    taskbar: TfspTaskbarMgr;
+    pnlSidebar: TPanel;
+    FlowPanel1: TFlowPanel;
+    IconFontsImageList1: TIconFontsImageList;
 
 
 
@@ -283,7 +281,6 @@ type
       Column: TColumnIndex; TextType: TVSTTextType; var CellText: string);
     procedure vstEditorsFreeNode(Sender: TBaseVirtualTree; Node: PVirtualNode);
     procedure ToolButton2Click(Sender: TObject);
-    procedure PageControl2Change(Sender: TObject);
     procedure btnApacheLogClick(Sender: TObject);
     procedure LinkLabel1LinkClick(Sender: TObject; const Link: string;
       LinkType: TSysLinkType);
@@ -304,11 +301,17 @@ type
       TargetCanvas: TCanvas; Node: PVirtualNode; Column: TColumnIndex;
       CellPaintMode: TVTCellPaintMode; CellRect: TRect; var ContentRect: TRect);
     procedure JvLED1Click(Sender: TObject);
+    procedure fspTaskbarPreviews1NeedIconicBitmap(Sender: TObject; Width,
+      Height: Integer; var Bitmap: HBITMAP);
+    procedure fspTaskbarPreviews1NeedIconicLivePreview(Sender: TObject;
+      var Bitmap: HBITMAP; var Origin: TPoint);
   private
 
     { Private declarations }
     FDirMon: TDirectoryMonitor;
     FWebS: IWebSocket;
+
+    Process: TProcesos<IProcess>;
 
 
     FConnectivity: TConnectivity;
@@ -429,7 +432,7 @@ implementation
 uses frmVirtualHost,
 filectrl,
 VirtualTrees.Types, Winapi.ActiveX, DataTransferManagerHelper,
-regexpr, functions, locales, frmEditors, frmphpsettings, frmLogViewer;
+regexpr, functions, locales, frmEditors, frmphpsettings, frmLogViewer, Winapi.DwmApi;
 {$R *.dfm}
 
 
@@ -1542,18 +1545,22 @@ begin
 end;
 
 procedure TfrmAMP.FormCreate(Sender: TObject);
+const
+  WDA_EXCLUDEFROMCAPTURE = $11;
 var
   hMenuHandle: HMENU;
   i:integer;
   myenvpath : string;
 begin
+  EnableImmersiveDarkMode(True);
 //  SetPriorityClass(GetCurrentProcess, $4000);//below normal al parecer mejor de IDLE
   lblBuild.Caption:='Build '+IntToStr(BUILDNUMBER);
-
+//SetWindowDisplayAffinity(Handle, WDA_EXCLUDEFROMCAPTURE);
   //SplitView1.Opened := False;
 
   FConnectivity := TConnectivity.Create;
   FConnectivity.OnConnectivityChange := ConnectivityChangeHandler;
+
 
 //  Width:=640;//307;
   pnlLauncher.Left:=2;
@@ -1572,6 +1579,9 @@ begin
 // creamos el icono del programa
 //  imglstAppIcons.GetIcon(0,myIcon);
 //  CoolTrayIcon1.IconList := imglstAppIcons;
+
+  // Processes Handling
+  Process := TProcesos<IProcess>.Create;
 
   Settings := TSettingsHandler.LoadSettings();
   ReadSettings;
@@ -1661,6 +1671,9 @@ begin
 
   XBtnProjectsClick(XBtnProjects);
 
+//  var darkmode: Boolean := True;
+//  const DWMWA_USE_IMMERSIVE_DARK_MODE: Integer = 20;
+//  DwmSetWindowAttribute(Handle, DWMWA_USE_IMMERSIVE_DARK_MODE, @darkmode, SizeOf(darkmode));
 
 end;
 
@@ -2664,6 +2677,18 @@ begin
 //  EnableNCShadow(Handle);
 end;
 
+procedure TfrmAMP.fspTaskbarPreviews1NeedIconicBitmap(Sender: TObject; Width,
+  Height: Integer; var Bitmap: HBITMAP);
+begin
+  Bitmap := fspControl2DIBPreview(pcSettings, pcSettings.ClientRect, Width, Height);
+end;
+
+procedure TfrmAMP.fspTaskbarPreviews1NeedIconicLivePreview(Sender: TObject;
+  var Bitmap: HBITMAP; var Origin: TPoint);
+begin
+  Bitmap := fspControl2DIB(Self);
+end;
+
 function TfrmAMP.GetNCBorderSize: Integer;
 begin
   case BorderStyle of
@@ -3308,19 +3333,6 @@ begin
   end;
 end;
 // Browsers launcher
-procedure TfrmAMP.PageControl2Change(Sender: TObject);
-begin
-  if BCEditor1.Lines.Text = '' then
-    BCEditor1.Lines.Text := '$font-stack:    Helvetica, sans-serif;'
-              +#13#10'$primary-color: #333;'
-              +#13#10''
-              +#13#10'body {'
-              +#13#10'  font: 100% $font-stack;'
-              +#13#10'  color: $primary-color;'
-              +#13#10'}'
-              +#13#10'';
-end;
-
 procedure TfrmAMP.PopupBrowserClick(Sender: TObject);
 var
   urlPath:string;
@@ -3819,6 +3831,8 @@ begin
     UnregisterHotKey(handle,GlobalFindAtom('WIN_A'));
 
   Settings.Free;
+
+  Process.Free;
 
   FConnectivity.Free;
 end;

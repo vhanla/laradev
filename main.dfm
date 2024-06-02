@@ -3,223 +3,77 @@ object frmAMP: TfrmAMP
   Top = 177
   AlphaBlend = True
   Caption = 'LaraDev'
-  ClientHeight = 500
-  ClientWidth = 692
+  ClientHeight = 466
+  ClientWidth = 718
   Color = clWhite
   CustomTitleBar.CaptionAlignment = taCenter
   CustomTitleBar.Height = 45
   CustomTitleBar.SystemColors = False
-  CustomTitleBar.SystemButtons = False
-  CustomTitleBar.BackgroundColor = 3484449
-  CustomTitleBar.ForegroundColor = clWhite
-  CustomTitleBar.InactiveBackgroundColor = 3484449
+  CustomTitleBar.BackgroundColor = clWhite
+  CustomTitleBar.ForegroundColor = clRed
+  CustomTitleBar.InactiveBackgroundColor = clWhite
   CustomTitleBar.InactiveForegroundColor = 10066329
   CustomTitleBar.ButtonForegroundColor = 65793
-  CustomTitleBar.ButtonBackgroundColor = 3484449
+  CustomTitleBar.ButtonBackgroundColor = clWhite
   CustomTitleBar.ButtonHoverForegroundColor = 65793
   CustomTitleBar.ButtonHoverBackgroundColor = 16053492
   CustomTitleBar.ButtonPressedForegroundColor = 65793
   CustomTitleBar.ButtonPressedBackgroundColor = 15395562
   CustomTitleBar.ButtonInactiveForegroundColor = 10066329
-  CustomTitleBar.ButtonInactiveBackgroundColor = 3484449
+  CustomTitleBar.ButtonInactiveBackgroundColor = clWhite
   Font.Charset = EASTEUROPE_CHARSET
   Font.Color = clWindowText
-  Font.Height = -13
+  Font.Height = -14
   Font.Name = 'Segoe UI'
   Font.Style = []
   Font.Quality = fqClearTypeNatural
   GlassFrame.Top = 45
   Position = poScreenCenter
   RoundedCorners = rcOn
+  ScreenSnap = True
   ShowHint = True
+  StyleElements = [seFont, seClient]
+  ShowInTaskBar = True
   OnClose = FormClose
   OnCreate = FormCreate
   OnDestroy = FormDestroy
   OnKeyDown = FormKeyDown
   OnResize = FormResize
   OnShow = FormShow
-  TextHeight = 17
+  TextHeight = 19
   object SplitView1: TSplitView
     Left = 0
     Top = 39
-    Width = 120
-    Height = 419
+    Width = 128
+    Height = 385
     AnimationStep = 50
     CloseStyle = svcCompact
     CompactWidth = 30
-    OpenedWidth = 120
+    OpenedWidth = 128
     Placement = svpLeft
     TabOrder = 0
-    ExplicitHeight = 402
-    object StackPanel1: TStackPanel
+    object pnlSidebar: TPanel
       Left = 0
       Top = 0
-      Width = 120
-      Height = 419
+      Width = 128
+      Height = 385
       Align = alClient
       BevelOuter = bvNone
-      ControlCollection = <
-        item
-          Control = XBtnProjects
-          HorizontalPositioning = sphpFill
-          VerticalPositioning = spvpFill
-        end
-        item
-          Control = XBtnSettings
-          HorizontalPositioning = sphpFill
-          VerticalPositioning = spvpFill
-        end
-        item
-          Control = XBtnServers
-          HorizontalPositioning = sphpFill
-          VerticalPositioning = spvpFill
-        end
-        item
-          Control = XBtnMonitor
-          HorizontalPositioning = sphpFill
-          VerticalPositioning = spvpFill
-        end
-        item
-          Control = btnDevTools
-          HorizontalPositioning = sphpFill
-          VerticalPositioning = spvpFill
-        end
-        item
-          Control = XBtnMail
-          HorizontalPositioning = sphpFill
-          VerticalPositioning = spvpFill
-        end
-        item
-          Control = XBtnExit
-          HorizontalPositioning = sphpFill
-          VerticalPositioning = spvpFill
-        end>
-      Spacing = 1
+      Color = clBlack
+      Ctl3D = True
+      ParentBackground = False
+      ParentCtl3D = False
       TabOrder = 0
-      ExplicitHeight = 402
-      object XBtnProjects: TXButton
-        Left = 0
-        Top = 0
-        Width = 120
-        Height = 35
-        Caption = 'Projects'
-        Color = clNavy
-        DisabledColor = clBlack
-        PressedColor = 6710886
-        Checked = True
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -20
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Font.Quality = fqClearTypeNatural
-        Enabled = True
-        OnClick = XBtnProjectsClick
-        TabStop = False
-        TabOrder = 1
-        Align = alClient
-        Images = imglstSidebarB
-        DisabledImageIndex = 0
-        HotImageIndex = 0
-        ImageIndex = 1
-        PressedImageIndex = 0
-        SelectedImageIndex = 0
-        StylusHotImageIndex = 0
-      end
-      object XBtnSettings: TXButton
-        Left = 0
-        Top = 36
-        Width = 120
-        Height = 35
-        Caption = 'Settings'
-        Color = clSkyBlue
-        DisabledColor = clBlack
-        PressedColor = 6710886
-        Checked = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -20
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Font.Quality = fqClearTypeNatural
-        Enabled = True
-        OnClick = XBtnSettingsClick
-        TabStop = False
-        TabOrder = 0
-        Align = alClient
-        Images = imglstSidebarB
-        DisabledImageIndex = 0
-        HotImageIndex = 0
-        ImageIndex = 3
-        PressedImageIndex = 0
-        SelectedImageIndex = 0
-        StylusHotImageIndex = 0
-      end
-      object XBtnServers: TXButton
-        Left = 0
-        Top = 72
-        Width = 120
-        Height = 35
-        Caption = 'Servers'
-        Color = clOlive
-        DisabledColor = clBlack
-        PressedColor = 6710886
-        Checked = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -20
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Font.Quality = fqClearTypeNatural
-        Enabled = True
-        OnClick = XBtnServersClick
-        TabStop = False
-        TabOrder = 2
-        Align = alClient
-        Images = imglstSidebarB
-        DisabledImageIndex = 0
-        HotImageIndex = 0
-        ImageIndex = 7
-        PressedImageIndex = 0
-        SelectedImageIndex = 0
-        StylusHotImageIndex = 0
-      end
-      object XBtnMonitor: TXButton
-        Left = 0
-        Top = 108
-        Width = 120
-        Height = 35
-        Caption = 'Monitor'
-        Color = clOlive
-        DisabledColor = clBlack
-        PressedColor = 6710886
-        Checked = False
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWhite
-        Font.Height = -20
-        Font.Name = 'Segoe UI'
-        Font.Style = []
-        Font.Quality = fqClearTypeNatural
-        Enabled = True
-        OnClick = XBtnMonitorClick
-        TabStop = False
-        TabOrder = 5
-        Align = alClient
-        Images = imglstSidebarB
-        DisabledImageIndex = 0
-        HotImageIndex = 0
-        ImageIndex = 4
-        PressedImageIndex = 0
-        SelectedImageIndex = 0
-        StylusHotImageIndex = 0
-      end
+      StyleElements = [seFont, seBorder]
       object btnDevTools: TXButton
-        Left = 0
-        Top = 144
-        Width = 120
-        Height = 35
-        Caption = 'DevCenter'
-        Color = clOlive
+        AlignWithMargins = True
+        Left = 3
+        Top = 223
+        Width = 122
+        Height = 38
+        Caption = 'DevTools'
+        Color = clBtnFace
+        Alpha = 0
         DisabledColor = clBlack
         PressedColor = 6710886
         Checked = False
@@ -232,23 +86,55 @@ object frmAMP: TfrmAMP
         Enabled = True
         OnClick = btnDevToolsClick
         TabStop = False
-        TabOrder = 4
-        Align = alClient
-        Images = imglstSidebarB
+        TabOrder = 0
+        Align = alTop
+        Images = IconFontsImageList1
         DisabledImageIndex = 0
         HotImageIndex = 0
-        ImageIndex = 5
+        ImageIndex = 11
+        PressedImageIndex = 0
+        SelectedImageIndex = 0
+        StylusHotImageIndex = 0
+      end
+      object XBtnExit: TXButton
+        AlignWithMargins = True
+        Left = 3
+        Top = 344
+        Width = 122
+        Height = 38
+        Caption = 'Exit'
+        Color = clBtnFace
+        Alpha = 0
+        DisabledColor = clBlack
+        PressedColor = 6710886
+        Checked = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Enabled = True
+        OnClick = XBtnExitClick
+        TabStop = False
+        TabOrder = 1
+        Align = alBottom
+        Images = IconFontsImageList1
+        DisabledImageIndex = 0
+        HotImageIndex = 0
+        ImageIndex = 97
         PressedImageIndex = 0
         SelectedImageIndex = 0
         StylusHotImageIndex = 0
       end
       object XBtnMail: TXButton
-        Left = 0
-        Top = 180
-        Width = 120
-        Height = 35
-        Caption = 'LocalMail'
-        Color = clOlive
+        AlignWithMargins = True
+        Left = 3
+        Top = 179
+        Width = 122
+        Height = 38
+        Caption = 'Mail'
+        Color = clBtnFace
+        Alpha = 0
         DisabledColor = clBlack
         PressedColor = 6710886
         Checked = False
@@ -261,23 +147,25 @@ object frmAMP: TfrmAMP
         Enabled = True
         OnClick = XBtnMailClick
         TabStop = False
-        TabOrder = 6
-        Align = alClient
-        Images = imglstSidebarB
+        TabOrder = 2
+        Align = alTop
+        Images = IconFontsImageList1
         DisabledImageIndex = 0
         HotImageIndex = 0
-        ImageIndex = 6
+        ImageIndex = 8
         PressedImageIndex = 0
         SelectedImageIndex = 0
         StylusHotImageIndex = 0
       end
-      object XBtnExit: TXButton
-        Left = 0
-        Top = 216
-        Width = 120
-        Height = 35
-        Caption = 'Exit'
-        Color = clOlive
+      object XBtnMonitor: TXButton
+        AlignWithMargins = True
+        Left = 3
+        Top = 135
+        Width = 122
+        Height = 38
+        Caption = 'Monitor'
+        Color = clBtnFace
+        Alpha = 0
         DisabledColor = clBlack
         PressedColor = 6710886
         Checked = False
@@ -286,15 +174,109 @@ object frmAMP: TfrmAMP
         Font.Height = -20
         Font.Name = 'Segoe UI'
         Font.Style = []
+        Font.Quality = fqClearTypeNatural
         Enabled = True
-        OnClick = XBtnExitClick
+        OnClick = XBtnMonitorClick
         TabStop = False
         TabOrder = 3
-        Align = alClient
-        Images = imglstSidebarB
+        Align = alTop
+        Images = IconFontsImageList1
         DisabledImageIndex = 0
         HotImageIndex = 0
-        ImageIndex = 8
+        ImageIndex = 89
+        PressedImageIndex = 0
+        SelectedImageIndex = 0
+        StylusHotImageIndex = 0
+      end
+      object XBtnProjects: TXButton
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 122
+        Height = 38
+        Caption = 'Projects'
+        Color = clBtnFace
+        Alpha = 0
+        DisabledColor = clBlack
+        PressedColor = 6710886
+        Checked = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Font.Quality = fqClearTypeNatural
+        Enabled = True
+        OnClick = XBtnProjectsClick
+        TabStop = False
+        TabOrder = 4
+        Align = alTop
+        Images = IconFontsImageList1
+        DisabledImageIndex = 0
+        HotImageIndex = 0
+        ImageIndex = 1
+        PressedImageIndex = 0
+        SelectedImageIndex = 0
+        StylusHotImageIndex = 0
+      end
+      object XBtnServers: TXButton
+        AlignWithMargins = True
+        Left = 3
+        Top = 91
+        Width = 122
+        Height = 38
+        Caption = 'Servers'
+        Color = clBtnFace
+        Alpha = 0
+        DisabledColor = clBlack
+        PressedColor = 6710886
+        Checked = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Font.Quality = fqClearTypeNatural
+        Enabled = True
+        OnClick = XBtnServersClick
+        TabStop = False
+        TabOrder = 5
+        Align = alTop
+        Images = IconFontsImageList1
+        DisabledImageIndex = 0
+        HotImageIndex = 0
+        ImageIndex = 42
+        PressedImageIndex = 0
+        SelectedImageIndex = 0
+        StylusHotImageIndex = 0
+      end
+      object XBtnSettings: TXButton
+        AlignWithMargins = True
+        Left = 3
+        Top = 47
+        Width = 122
+        Height = 38
+        Caption = 'Settings'
+        Color = clBtnFace
+        Alpha = 0
+        DisabledColor = clBlack
+        PressedColor = 6710886
+        Checked = False
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWhite
+        Font.Height = -20
+        Font.Name = 'Segoe UI'
+        Font.Style = []
+        Font.Quality = fqClearTypeNatural
+        Enabled = True
+        OnClick = XBtnSettingsClick
+        TabStop = False
+        TabOrder = 6
+        Align = alTop
+        Images = IconFontsImageList1
+        DisabledImageIndex = 0
+        HotImageIndex = 0
+        ImageIndex = 0
         PressedImageIndex = 0
         SelectedImageIndex = 0
         StylusHotImageIndex = 0
@@ -302,23 +284,22 @@ object frmAMP: TfrmAMP
     end
   end
   object CardPanel1: TCardPanel
-    Left = 120
+    Left = 128
     Top = 39
-    Width = 572
-    Height = 419
+    Width = 590
+    Height = 385
     Align = alClient
-    ActiveCard = CardProjects
+    ActiveCard = CardSettings
+    BevelOuter = bvNone
     Caption = 'CardPanel1'
     Color = clWindow
     ParentBackground = False
     TabOrder = 1
-    ExplicitWidth = 566
-    ExplicitHeight = 402
     object CardSettings: TCard
-      Left = 1
-      Top = 1
-      Width = 570
-      Height = 417
+      Left = 0
+      Top = 0
+      Width = 590
+      Height = 385
       Caption = 'CardSettings'
       CardIndex = 0
       Padding.Left = 4
@@ -329,9 +310,9 @@ object frmAMP: TfrmAMP
       object pcSettings: TPageControl
         Left = 4
         Top = 4
-        Width = 562
-        Height = 409
-        ActivePage = tsGeneralSettings
+        Width = 582
+        Height = 377
+        ActivePage = TabSheet2
         Align = alClient
         TabOrder = 0
         object tsGeneralSettings: TTabSheet
@@ -339,24 +320,24 @@ object frmAMP: TfrmAMP
           object pnlSettings: TPanel
             Left = 0
             Top = 0
-            Width = 554
-            Height = 377
+            Width = 574
+            Height = 343
             Align = alClient
             BevelOuter = bvNone
             TabOrder = 0
             object GroupBox1: TGroupBox
               Left = 0
               Top = 0
-              Width = 554
+              Width = 574
               Height = 156
               Align = alTop
               Caption = 'Configuraci'#243'n'
               TabOrder = 0
               object GridPanel1: TGridPanel
                 Left = 2
-                Top = 19
-                Width = 550
-                Height = 135
+                Top = 21
+                Width = 570
+                Height = 133
                 Align = alClient
                 BevelOuter = bvNone
                 ColumnCollection = <
@@ -482,12 +463,12 @@ object frmAMP: TfrmAMP
                   end>
                 TabOrder = 0
                 DesignSize = (
-                  550
-                  135)
+                  570
+                  133)
                 object chkStartwWin: TCheckBox
                   Left = 0
                   Top = 0
-                  Width = 313
+                  Width = 325
                   Height = 17
                   Align = alTop
                   Caption = '&Iniciar junto con Windows'
@@ -495,17 +476,17 @@ object frmAMP: TfrmAMP
                   OnClick = chkStartwWinClick
                 end
                 object chkSplashScreen: TCheckBox
-                  Left = 313
+                  Left = 325
                   Top = 0
-                  Width = 237
+                  Width = 245
                   Height = 17
                   Align = alTop
                   Caption = 'Splash'
                   TabOrder = 1
                 end
                 object btnApply: TButton
-                  Left = 466
-                  Top = 112
+                  Left = 484
+                  Top = 110
                   Width = 49
                   Height = 19
                   Anchors = []
@@ -514,8 +495,8 @@ object frmAMP: TfrmAMP
                   OnClick = btnApplyClick
                 end
                 object btnPHPini: TButton
-                  Left = 351
-                  Top = 112
+                  Left = 365
+                  Top = 110
                   Width = 42
                   Height = 19
                   Anchors = []
@@ -524,8 +505,8 @@ object frmAMP: TfrmAMP
                   OnClick = btnPHPiniClick
                 end
                 object btnSearchPath: TButton
-                  Left = 466
-                  Top = 57
+                  Left = 484
+                  Top = 56
                   Width = 49
                   Height = 18
                   Anchors = []
@@ -534,8 +515,8 @@ object frmAMP: TfrmAMP
                   OnClick = btnSearchPathClick
                 end
                 object btnSublime: TButton
-                  Left = 466
-                  Top = 85
+                  Left = 484
+                  Top = 83
                   Width = 49
                   Height = 18
                   Anchors = []
@@ -544,8 +525,8 @@ object frmAMP: TfrmAMP
                   OnClick = btnSublimeClick
                 end
                 object btnHosts: TButton
-                  Left = 21
-                  Top = 112
+                  Left = 23
+                  Top = 110
                   Width = 57
                   Height = 19
                   Anchors = []
@@ -555,8 +536,8 @@ object frmAMP: TfrmAMP
                   OnClick = btnHostsClick
                 end
                 object btnVHosts: TButton
-                  Left = 130
-                  Top = 112
+                  Left = 135
+                  Top = 110
                   Width = 42
                   Height = 19
                   Anchors = []
@@ -565,10 +546,10 @@ object frmAMP: TfrmAMP
                   OnClick = btnVHostsClick
                 end
                 object cbPHPversion: TComboBox
-                  Left = 228
-                  Top = 109
+                  Left = 237
+                  Top = 106
                   Width = 60
-                  Height = 25
+                  Height = 27
                   Anchors = []
                   TabOrder = 8
                   Items.Strings = (
@@ -577,8 +558,8 @@ object frmAMP: TfrmAMP
                     'PHP 8')
                 end
                 object chkSSL: TCheckBox
-                  Left = 471
-                  Top = 31
+                  Left = 489
+                  Top = 30
                   Width = 39
                   Height = 17
                   Anchors = []
@@ -586,10 +567,10 @@ object frmAMP: TfrmAMP
                   TabOrder = 9
                 end
                 object editPort: TSpinEdit
-                  Left = 255
+                  Left = 267
                   Top = 26
                   Width = 123
-                  Height = 27
+                  Height = 29
                   Anchors = []
                   AutoSize = False
                   MaxValue = 0
@@ -598,8 +579,8 @@ object frmAMP: TfrmAMP
                   Value = 0
                 end
                 object editScriptsPath: TEdit
-                  Left = 255
-                  Top = 57
+                  Left = 267
+                  Top = 56
                   Width = 123
                   Height = 18
                   Anchors = []
@@ -607,8 +588,8 @@ object frmAMP: TfrmAMP
                   TabOrder = 11
                 end
                 object editSublimePath: TEdit
-                  Left = 255
-                  Top = 85
+                  Left = 267
+                  Top = 83
                   Width = 123
                   Height = 18
                   Anchors = []
@@ -618,21 +599,21 @@ object frmAMP: TfrmAMP
                 object lblPort: TLabel
                   Left = 0
                   Top = 26
-                  Width = 203
-                  Height = 27
+                  Width = 210
+                  Height = 26
                   Align = alClient
                   Alignment = taRightJustify
                   Caption = 'Puerto a Usar:'
                   Layout = tlCenter
-                  ExplicitLeft = 120
-                  ExplicitWidth = 83
-                  ExplicitHeight = 17
+                  ExplicitLeft = 123
+                  ExplicitWidth = 87
+                  ExplicitHeight = 19
                 end
                 object lblSublime: TLabel
                   Left = 0
-                  Top = 80
-                  Width = 203
-                  Height = 28
+                  Top = 79
+                  Width = 210
+                  Height = 27
                   Hint = 'Para abrir tus proyectos con SublimeText2'
                   Align = alClient
                   Alignment = taRightJustify
@@ -640,73 +621,73 @@ object frmAMP: TfrmAMP
                   ParentShowHint = False
                   ShowHint = True
                   Layout = tlCenter
-                  ExplicitLeft = 127
-                  ExplicitWidth = 76
-                  ExplicitHeight = 17
+                  ExplicitLeft = 130
+                  ExplicitWidth = 80
+                  ExplicitHeight = 19
                 end
                 object lblWebScripts: TLabel
                   Left = 0
-                  Top = 53
-                  Width = 203
+                  Top = 52
+                  Width = 210
                   Height = 27
                   Align = alClient
                   Alignment = taRightJustify
                   Caption = 'Alias (www)'
                   Layout = tlCenter
-                  ExplicitLeft = 137
-                  ExplicitWidth = 66
-                  ExplicitHeight = 17
+                  ExplicitLeft = 140
+                  ExplicitWidth = 70
+                  ExplicitHeight = 19
                 end
               end
             end
             object GroupBox2: TGroupBox
               Left = 0
               Top = 156
-              Width = 554
-              Height = 221
+              Width = 574
+              Height = 187
               Align = alClient
               Caption = 'Estado del servidor'
               TabOrder = 1
               object lblApache: TLabel
                 Left = 16
                 Top = 44
-                Width = 32
-                Height = 17
+                Width = 35
+                Height = 19
                 Caption = 'Http :'
               end
               object lblSQL: TLabel
                 Left = 16
                 Top = 64
-                Width = 48
-                Height = 17
+                Width = 52
+                Height = 19
                 Caption = 'MySQL :'
               end
               object lblApacheState: TLabel
                 Left = 73
                 Top = 44
                 Width = 9
-                Height = 17
+                Height = 19
                 Caption = '...'
               end
               object lblMySQLState: TLabel
                 Left = 73
                 Top = 64
                 Width = 9
-                Height = 17
+                Height = 19
                 Caption = '...'
               end
               object Label2: TLabel
                 Left = 17
                 Top = 84
-                Width = 30
-                Height = 17
+                Width = 33
+                Height = 19
                 Caption = 'PHP :'
               end
               object Label4: TLabel
                 Left = 16
                 Top = 24
-                Width = 82
-                Height = 17
+                Width = 84
+                Height = 19
                 Caption = 'Servidor Web:'
               end
               object btnPHPInfo: TButton
@@ -722,7 +703,7 @@ object frmAMP: TfrmAMP
                 Left = 114
                 Top = 16
                 Width = 168
-                Height = 25
+                Height = 27
                 TabOrder = 1
                 Items.Strings = (
                   'Apache'
@@ -777,8 +758,8 @@ object frmAMP: TfrmAMP
           object vstEditors: TVirtualStringTree
             Left = 41
             Top = 0
-            Width = 513
-            Height = 377
+            Width = 533
+            Height = 343
             Align = alClient
             Colors.BorderColor = 15790320
             Colors.DisabledColor = clGray
@@ -799,7 +780,7 @@ object frmAMP: TfrmAMP
             Colors.UnfocusedSelectionBorderColor = 14405055
             DefaultNodeHeight = 21
             Header.AutoSizeIndex = 2
-            Header.Height = 21
+            Header.Height = 23
             Header.Options = [hoAutoResize, hoColumnResize, hoDblClickResize, hoDrag, hoShowSortGlyphs, hoVisible]
             Header.SortColumn = 1
             Header.SortDirection = sdDescending
@@ -827,14 +808,14 @@ object frmAMP: TfrmAMP
                 Options = [coAllowClick, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coVisible, coAllowFocus, coUseCaptionAlignment]
                 Position = 2
                 Text = 'Params'
-                Width = 319
+                Width = 335
               end>
           end
           object ToolBar1: TToolBar
             Left = 0
             Top = 0
             Width = 41
-            Height = 377
+            Height = 343
             Align = alLeft
             ButtonHeight = 38
             ButtonWidth = 39
@@ -873,26 +854,14 @@ object frmAMP: TfrmAMP
           ImageIndex = 3
         end
         object TabSheet2: TTabSheet
-          Caption = 'WebCompiler'
+          Caption = 'Web Browsers'
           ImageIndex = 4
           object Label5: TLabel
             Left = 16
             Top = 16
-            Width = 129
-            Height = 17
-            Caption = 'WebCompiler Settings'
-          end
-          object LabeledEdit1: TLabeledEdit
-            Left = 120
-            Top = 55
-            Width = 121
-            Height = 25
-            EditLabel.Width = 77
-            EditLabel.Height = 25
-            EditLabel.Caption = 'NodeJS Path:'
-            LabelPosition = lpLeft
-            TabOrder = 0
-            Text = ''
+            Width = 86
+            Height = 19
+            Caption = 'Web Browsers'
           end
         end
         object tbsEnvPaths: TTabSheet
@@ -901,8 +870,8 @@ object frmAMP: TfrmAMP
           object Label6: TLabel
             Left = 8
             Top = 16
-            Width = 612
-            Height = 17
+            Width = 640
+            Height = 19
             Caption = 
               'System'#39's Environment Variables (PATH) can be overrided in order ' +
               'to  allow launched processes use them.'
@@ -911,10 +880,10 @@ object frmAMP: TfrmAMP
       end
     end
     object CardProjects: TCard
-      Left = 1
-      Top = 1
-      Width = 570
-      Height = 417
+      Left = 0
+      Top = 0
+      Width = 590
+      Height = 385
       Caption = 'CardProjects'
       CardIndex = 1
       Padding.Left = 4
@@ -922,59 +891,54 @@ object frmAMP: TfrmAMP
       Padding.Right = 4
       Padding.Bottom = 4
       TabOrder = 1
-      ExplicitWidth = 564
-      ExplicitHeight = 400
       object pnlLauncher: TPanel
         Left = 4
         Top = 4
-        Width = 562
-        Height = 409
+        Width = 582
+        Height = 377
         Align = alClient
+        BevelOuter = bvNone
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 556
-        ExplicitHeight = 392
         object gbxVPaths: TGroupBox
-          Left = 1
-          Top = 1
-          Width = 560
+          Left = 0
+          Top = 0
+          Width = 582
           Height = 45
           Align = alTop
           Caption = 'Carpeta externa alternativa (alias /www)'
           TabOrder = 0
           Visible = False
-          ExplicitWidth = 554
           object lstVPaths: TListBox
             Left = 2
-            Top = 19
-            Width = 556
-            Height = 24
+            Top = 21
+            Width = 578
+            Height = 22
             Align = alClient
             BevelInner = bvNone
             BevelOuter = bvNone
             BorderStyle = bsNone
-            ItemHeight = 17
+            ItemHeight = 19
             PopupMenu = PopupMenuLauncher
             TabOrder = 0
             OnDblClick = lstVPathsDblClick
             OnMouseDown = lstVPathsMouseDown
-            ExplicitWidth = 550
           end
         end
         object gbxProjects: TGroupBox
-          Left = 1
-          Top = 46
-          Width = 560
-          Height = 362
+          Left = 0
+          Top = 45
+          Width = 397
+          Height = 332
           Align = alClient
-          Caption = 'Proyectos encontrados  (doble click, clic der.)'
+          Caption = 'Projects'
+          Ctl3D = True
+          ParentCtl3D = False
           TabOrder = 1
-          ExplicitWidth = 554
-          ExplicitHeight = 345
           object lstProjects: TListBox
             Left = 2
-            Top = 19
-            Width = 556
+            Top = 21
+            Width = 393
             Height = 33
             Style = lbOwnerDrawVariable
             Align = alTop
@@ -986,14 +950,15 @@ object frmAMP: TfrmAMP
             OnDblClick = lstProjectsDblClick
             OnDrawItem = lstProjectsDrawItem
             OnMouseDown = lstProjectsMouseDown
-            ExplicitWidth = 550
           end
           object vstProjects: TVirtualStringTree
             Left = 2
-            Top = 52
-            Width = 556
-            Height = 308
+            Top = 54
+            Width = 393
+            Height = 276
             Align = alClient
+            BevelInner = bvNone
+            BevelOuter = bvNone
             BorderStyle = bsNone
             Colors.BorderColor = 15790320
             Colors.DisabledColor = clGray
@@ -1012,7 +977,8 @@ object frmAMP: TfrmAMP
             Colors.UnfocusedColor = clBlack
             Colors.UnfocusedSelectionColor = 14405055
             Colors.UnfocusedSelectionBorderColor = 14405055
-            DefaultNodeHeight = 21
+            DefaultNodeHeight = 32
+            EmptyListMessage = 'No projects'
             Font.Charset = EASTEUROPE_CHARSET
             Font.Color = clWindowText
             Font.Height = -13
@@ -1076,7 +1042,7 @@ object frmAMP: TfrmAMP
               item
                 Options = [coAllowClick, coEnabled, coParentBidiMode, coParentColor, coResizable, coShowDropMark, coAllowFocus, coWrapCaption]
                 Position = 5
-                Width = 186
+                Width = 23
               end
               item
                 Position = 6
@@ -1084,22 +1050,31 @@ object frmAMP: TfrmAMP
               end>
           end
         end
+        object FlowPanel1: TFlowPanel
+          Left = 397
+          Top = 45
+          Width = 185
+          Height = 332
+          Align = alRight
+          TabOrder = 2
+        end
       end
     end
     object CardMonitor: TCard
-      Left = 1
-      Top = 1
-      Width = 570
-      Height = 417
+      Left = 0
+      Top = 0
+      Width = 590
+      Height = 385
       Caption = 'CardMonitor'
       CardIndex = 2
       TabOrder = 2
       object pnlMonitor: TPanel
         Left = 0
         Top = 0
-        Width = 570
-        Height = 417
+        Width = 590
+        Height = 385
         Align = alClient
+        BevelOuter = bvNone
         Color = 15527148
         ParentBackground = False
         TabOrder = 0
@@ -1136,18 +1111,18 @@ object frmAMP: TfrmAMP
           WordWrap = True
         end
         object lblWebsocketsStatus: TLabel
-          Left = 41
+          Left = 34
           Top = 94
-          Width = 139
-          Height = 17
+          Width = 146
+          Height = 19
           Alignment = taRightJustify
           Caption = 'Websockets server: OFF'
         end
         object lblMonitorLog: TLabel
           Left = 8
           Top = 141
-          Width = 49
-          Height = 17
+          Width = 51
+          Height = 19
           Caption = 'Detalles:'
         end
         object lblGetExtension: TLabel
@@ -1167,10 +1142,10 @@ object frmAMP: TfrmAMP
           ParentFont = False
         end
         object lblWebSocketsPort: TLabel
-          Left = 48
+          Left = 38
           Top = 67
-          Width = 132
-          Height = 17
+          Width = 142
+          Height = 19
           Alignment = taRightJustify
           Caption = 'Puerto (default 35792):'
         end
@@ -1207,7 +1182,7 @@ object frmAMP: TfrmAMP
           Left = 192
           Top = 64
           Width = 89
-          Height = 27
+          Height = 29
           MaxValue = 65535
           MinValue = 81
           TabOrder = 0
@@ -1217,18 +1192,18 @@ object frmAMP: TfrmAMP
       end
     end
     object CardServers: TCard
-      Left = 1
-      Top = 1
-      Width = 570
-      Height = 417
+      Left = 0
+      Top = 0
+      Width = 590
+      Height = 385
       Caption = 'CardServers'
       CardIndex = 3
       TabOrder = 3
       object PageControl1: TPageControl
         Left = 0
         Top = 0
-        Width = 570
-        Height = 417
+        Width = 590
+        Height = 385
         ActivePage = tbsApache
         Align = alClient
         TabOrder = 0
@@ -1237,29 +1212,29 @@ object frmAMP: TfrmAMP
           object Label3: TLabel
             Left = 35
             Top = 62
-            Width = 55
-            Height = 17
+            Width = 57
+            Height = 19
             Caption = 'Available:'
           end
           object Label1: TLabel
             Left = 24
             Top = 24
-            Width = 70
-            Height = 17
+            Width = 72
+            Height = 19
             Caption = 'Web Server:'
           end
           object ComboBox2: TComboBox
             Left = 91
             Top = 58
             Width = 145
-            Height = 25
+            Height = 27
             TabOrder = 0
           end
           object ComboBox1: TComboBox
             Left = 91
             Top = 21
             Width = 145
-            Height = 25
+            Height = 27
             TabOrder = 1
             Items.Strings = (
               'Apache'
@@ -1269,8 +1244,8 @@ object frmAMP: TfrmAMP
           object LinkLabel1: TLinkLabel
             Left = 26
             Top = 135
-            Width = 428
-            Height = 21
+            Width = 450
+            Height = 23
             Caption = 
               'Download new versions from <a href="https://www.apachelounge.com' +
               '/download/">https://www.apachelounge.com/download/</a>'
@@ -1289,7 +1264,7 @@ object frmAMP: TfrmAMP
             Left = 0
             Top = 300
             Width = 49
-            Height = 85
+            Height = 51
             Align = alLeft
             ButtonHeight = 38
             ButtonWidth = 39
@@ -1307,7 +1282,7 @@ object frmAMP: TfrmAMP
           object UWPDownloader1: TUWPDownloader
             Left = 0
             Top = 60
-            Width = 562
+            Width = 582
             Align = alTop
             Caption = 'PHP 8.2'
             TabOrder = 1
@@ -1357,7 +1332,7 @@ object frmAMP: TfrmAMP
           object UWPDownloader2: TUWPDownloader
             Left = 0
             Top = 0
-            Width = 562
+            Width = 582
             Align = alTop
             Caption = 'PHP 8.3'
             TabOrder = 2
@@ -1407,7 +1382,7 @@ object frmAMP: TfrmAMP
           object UWPDownloader3: TUWPDownloader
             Left = 0
             Top = 180
-            Width = 562
+            Width = 582
             Align = alTop
             Caption = 'PHP 8.1'
             TabOrder = 3
@@ -1457,7 +1432,7 @@ object frmAMP: TfrmAMP
           object UWPDownloader4: TUWPDownloader
             Left = 0
             Top = 120
-            Width = 562
+            Width = 582
             Align = alTop
             Caption = 'PHP 8.0'
             TabOrder = 4
@@ -1507,7 +1482,7 @@ object frmAMP: TfrmAMP
           object UWPDownloader5: TUWPDownloader
             Left = 0
             Top = 240
-            Width = 562
+            Width = 582
             Align = alTop
             Caption = 'PHP 7.4'
             TabOrder = 5
@@ -1560,8 +1535,8 @@ object frmAMP: TfrmAMP
           ImageIndex = 3
           object dwnApache: TUWPDownloader
             Left = 0
-            Top = 325
-            Width = 562
+            Top = 291
+            Width = 582
             Align = alBottom
             Caption = 'HTTPD downloader'
             TabOrder = 0
@@ -1611,18 +1586,18 @@ object frmAMP: TfrmAMP
       end
     end
     object CardMail: TCard
-      Left = 1
-      Top = 1
-      Width = 570
-      Height = 417
+      Left = 0
+      Top = 0
+      Width = 590
+      Height = 385
       Caption = 'CardMail'
       CardIndex = 4
       TabOrder = 4
       object pgLocalMail: TPageControl
         Left = 0
         Top = 0
-        Width = 570
-        Height = 417
+        Width = 590
+        Height = 385
         ActivePage = tbsMail
         Align = alClient
         TabOrder = 0
@@ -1630,8 +1605,8 @@ object frmAMP: TfrmAMP
           Caption = 'Mail'
           object Panel1: TPanel
             Left = 0
-            Top = 323
-            Width = 562
+            Top = 289
+            Width = 582
             Height = 62
             Align = alBottom
             BevelOuter = bvNone
@@ -1640,7 +1615,7 @@ object frmAMP: TfrmAMP
               Left = 24
               Top = 8
               Width = 4
-              Height = 17
+              Height = 19
             end
             object btnTheary: TButton
               Left = 16
@@ -1655,8 +1630,8 @@ object frmAMP: TfrmAMP
           object EmbeddedWB1: TEmbeddedWB
             Left = 0
             Top = 0
-            Width = 562
-            Height = 323
+            Width = 582
+            Height = 289
             Align = alClient
             TabOrder = 1
             Silent = False
@@ -1666,7 +1641,8 @@ object frmAMP: TfrmAMP
             PrintOptions.HTMLHeader.Strings = (
               '<HTML></HTML>')
             PrintOptions.Orientation = poPortrait
-            ExplicitHeight = 279
+            ExplicitWidth = 486
+            ExplicitHeight = 276
             ControlData = {
               4C000000E64600001D1C00000000000000000000000000000000000000000000
               000000004C000000000000000000000001000000E0D057007335CF11AE690800
@@ -1682,29 +1658,28 @@ object frmAMP: TfrmAMP
       end
     end
     object CardDevtools: TCard
-      Left = 1
-      Top = 1
-      Width = 570
-      Height = 417
+      Left = 0
+      Top = 0
+      Width = 590
+      Height = 385
       Caption = 'CardDevtools'
       CardIndex = 5
       TabOrder = 5
       object PageControl2: TPageControl
         Left = 0
         Top = 0
-        Width = 570
-        Height = 417
+        Width = 590
+        Height = 385
         ActivePage = TabSheet1
         Align = alClient
         TabOrder = 0
-        OnChange = PageControl2Change
         object TabSheet1: TTabSheet
-          Caption = 'Web'
+          Caption = 'WebApps'
           object EmbeddedWB2: TEmbeddedWB
             Left = 0
             Top = 0
-            Width = 562
-            Height = 385
+            Width = 582
+            Height = 351
             Align = alClient
             TabOrder = 0
             Silent = False
@@ -1714,7 +1689,8 @@ object frmAMP: TfrmAMP
             PrintOptions.HTMLHeader.Strings = (
               '<HTML></HTML>')
             PrintOptions.Orientation = poPortrait
-            ExplicitHeight = 341
+            ExplicitWidth = 486
+            ExplicitHeight = 338
             ControlData = {
               4C000000BA470000842500000000000000000000000000000000000000000000
               000000004C000000000000000000000001000000E0D057007335CF11AE690800
@@ -1723,143 +1699,13 @@ object frmAMP: TfrmAMP
               00000000000000000100000000000000000000000000000000000000}
           end
         end
-        object Sass: TTabSheet
-          Caption = 'Sass'
-          ImageIndex = 1
-          object Splitter1: TSplitter
-            Left = 302
-            Top = 0
-            Height = 360
-            ExplicitLeft = 304
-            ExplicitTop = 128
-            ExplicitHeight = 100
-          end
-          object BCEditor1: TSynEdit
-            Left = 0
-            Top = 0
-            Width = 302
-            Height = 360
-            Align = alLeft
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -12
-            Font.Name = 'Courier New'
-            Font.Style = []
-            Font.Quality = fqClearTypeNatural
-            TabOrder = 0
-            UseCodeFolding = False
-            Gutter.Font.Charset = DEFAULT_CHARSET
-            Gutter.Font.Color = clWindowText
-            Gutter.Font.Height = -11
-            Gutter.Font.Name = 'Consolas'
-            Gutter.Font.Style = []
-            Gutter.Font.Quality = fqClearTypeNatural
-            Gutter.Bands = <
-              item
-                Kind = gbkMarks
-                Width = 13
-              end
-              item
-                Kind = gbkLineNumbers
-              end
-              item
-                Kind = gbkFold
-              end
-              item
-                Kind = gbkTrackChanges
-              end
-              item
-                Kind = gbkMargin
-                Width = 3
-              end>
-            Highlighter = SynCssSyn1
-            Lines.Strings = (
-              '.input {'
-              '  border-radius: 3px;'
-              '  border: 4px solid #ddd;'
-              '  color: #555;'
-              '  font-size: 17px;'
-              '  padding: 10px 20px;'
-              '  display: inline-block;'
-              '  outline: 0;'
-              '}'
-              ''
-              '.error-input {'
-              '  @extend .input;'
-              '  border:4px solid #e74c3c;'
-              '}')
-            SelectedColor.Alpha = 0.400000005960464500
-          end
-          object BCEditor2: TSynEdit
-            Left = 305
-            Top = 0
-            Width = 257
-            Height = 360
-            Align = alClient
-            Font.Charset = DEFAULT_CHARSET
-            Font.Color = clWindowText
-            Font.Height = -12
-            Font.Name = 'Courier New'
-            Font.Style = []
-            Font.Quality = fqClearTypeNatural
-            TabOrder = 1
-            UseCodeFolding = False
-            Gutter.Font.Charset = DEFAULT_CHARSET
-            Gutter.Font.Color = clWindowText
-            Gutter.Font.Height = -11
-            Gutter.Font.Name = 'Consolas'
-            Gutter.Font.Style = []
-            Gutter.Font.Quality = fqClearTypeNatural
-            Gutter.Bands = <
-              item
-                Kind = gbkMarks
-                Width = 13
-              end
-              item
-                Kind = gbkLineNumbers
-              end
-              item
-                Kind = gbkFold
-              end
-              item
-                Kind = gbkTrackChanges
-              end
-              item
-                Kind = gbkMargin
-                Width = 3
-              end>
-            SelectedColor.Alpha = 0.400000005960464500
-          end
-          object Button2: TButton
-            Left = 0
-            Top = 360
-            Width = 562
-            Height = 25
-            Align = alBottom
-            Caption = 'Convert to CSS'
-            TabOrder = 2
-          end
-        end
-        object tbsWebCompiler: TTabSheet
-          Caption = 'WebCompiler'
-          ImageIndex = 2
-          object Label7: TLabel
-            Left = 16
-            Top = 16
-            Width = 472
-            Height = 17
-            Caption = 
-              'Compiles LESS, Sass, JSX, ES6 and CoffeeScript files. It alos mi' +
-              'nifies, ulgligy them.'
-          end
-        end
       end
     end
   end
   object pnlHeader: TPanel
     Left = 0
     Top = 0
-    Width = 692
+    Width = 718
     Height = 39
     Align = alTop
     BevelOuter = bvNone
@@ -1868,11 +1714,10 @@ object frmAMP: TfrmAMP
     ParentBackground = False
     TabOrder = 2
     Visible = False
-    ExplicitWidth = 686
     object lblTitle: TLabel
       Left = 0
       Top = 0
-      Width = 692
+      Width = 718
       Height = 26
       Align = alTop
       Alignment = taCenter
@@ -1893,7 +1738,7 @@ object frmAMP: TfrmAMP
     object lblBuild: TLabel
       Left = 0
       Top = 26
-      Width = 692
+      Width = 718
       Height = 9
       Align = alClient
       Alignment = taCenter
@@ -1925,20 +1770,21 @@ object frmAMP: TfrmAMP
   end
   object pnlFooter: TPanel
     Left = 0
-    Top = 458
-    Width = 692
+    Top = 424
+    Width = 718
     Height = 42
     Align = alBottom
     BevelOuter = bvNone
     Color = clWindow
     ParentBackground = False
     TabOrder = 3
-    ExplicitTop = 441
-    ExplicitWidth = 686
+    DesignSize = (
+      718
+      42)
     object lblLink: TLabel
       Left = 0
       Top = 0
-      Width = 692
+      Width = 718
       Height = 13
       Cursor = crHandPoint
       Align = alTop
@@ -1957,13 +1803,13 @@ object frmAMP: TfrmAMP
       ExplicitWidth = 121
     end
     object lblDonate: TLabel
-      Left = 0
-      Top = 13
-      Width = 692
-      Height = 29
+      Left = 352
+      Top = 19
+      Width = 35
+      Height = 13
       Cursor = crHandPoint
-      Align = alClient
       Alignment = taCenter
+      Anchors = [akLeft, akRight, akBottom]
       Caption = 'Donate'
       Color = clSkyBlue
       Font.Charset = ANSI_CHARSET
@@ -1975,8 +1821,6 @@ object frmAMP: TfrmAMP
       ParentColor = False
       ParentFont = False
       OnClick = lblDonateClick
-      ExplicitWidth = 35
-      ExplicitHeight = 13
     end
   end
   object SystrayPopupMenu: TPopupMenu
@@ -6549,29 +6393,25 @@ object frmAMP: TfrmAMP
     Left = 344
     Top = 240
   end
-  object Taskbar1: TTaskbar
-    TaskBarButtons = <
-      item
-      end
-      item
-      end
-      item
-      end
-      item
-      end
-      item
-      end
-      item
-      end
-      item
-      end>
-    TabProperties = []
-    Left = 200
-    Top = 360
-  end
   object JumpList1: TJumpList
+    AutoRefresh = True
     Enabled = True
-    CustomCategories = <>
+    ApplicationID = 'LaraDev'
+    CustomCategories = <
+      item
+        CategoryName = 'Global PHP'
+        Items = <
+          item
+            Icon = 'L:\FreepascalProjects\udevtool\icon4.ico'
+            FriendlyName = 'PHP 8.3'
+          end
+          item
+            FriendlyName = 'PHP 8.2'
+          end
+          item
+            FriendlyName = 'PHP 7.4'
+          end>
+      end>
     TaskList = <
       item
         FriendlyName = 'Jump List Item 1'
@@ -6587,5 +6427,552 @@ object frmAMP: TfrmAMP
       end>
     Left = 328
     Top = 352
+  end
+  object fspTaskbarPreviews1: TfspTaskbarPreviews
+    Active = True
+    CustomLiveView = False
+    OnNeedIconicBitmap = fspTaskbarPreviews1NeedIconicBitmap
+    OnNeedIconicLivePreview = fspTaskbarPreviews1NeedIconicLivePreview
+    Left = 256
+    Top = 352
+  end
+  object taskbar: TfspTaskbarMgr
+    Active = True
+    ProgressValue = 0
+    ProgressValueMax = 100
+    ProgressState = fstpsIndeterminate
+    OverlayIcon.Data = {
+      000001000200101000000100200068040000260000002020000001002000A810
+      00008E0400002800000010000000200000000100200000000000300400000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF01FFFFFF34FFFFFF51FFFFFF50FFFFFF33FFFFFF01000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF05FFFF
+      FF6DFFFFFFE2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE1FFFFFF6CFFFF
+      FF050000000000000000000000000000000000000000FFFFFF10FFFFFFBFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFBDFFFFFF10000000000000000000000000FFFFFF05FFFFFFBFFFFFFFFFFFFF
+      FFF8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFBCFFFFFF040000000000000000FFFFFF6EFFFFFFFFFFFFFFF8FFFF
+      FF4CFFFFFFE5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFF6A00000000FFFFFF01FFFFFFE2FFFFFFFFFFFFFFFFFFFF
+      FFE3FFFFFF4AFFFFFFE5FFFFFFC4FFFFFF8BFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFE0FFFFFF01FFFFFF30FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFE3FFFFFF44FFFFFF0CFFFFFF32FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFF2DFFFFFF50FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFC4FFFFFF0D0000000000000000FFFFFF42FFFFFF9AFFFFFFF8FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFF4FFFFFFF4FFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFF8BFFFFFF3800000000000000000000000000000000FFFFFF2AFFFF
+      FFA0FFFFFFFFFFFFFFFFFFFFFF4EFFFFFF31FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFF4B000000000000000000000000FFFFFF41FFFF
+      FFF5FFFFFFFFFFFFFFFFFFFFFF2EFFFFFF02FFFFFFE6FFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFF9D0000000000000000FFFFFF42FFFFFFF5FFFF
+      FFFFFFFFFFFFFFFFFFE4FFFFFF0100000000FFFFFF72FFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFF8FFFFFF28FFFFFF42FFFFFFF5FFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFF6F0000000000000000FFFFFF05FFFFFFC4FFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFA2FFFFFFF5FFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFC1FFFFFF04000000000000000000000000FFFFFF16FFFFFFC5FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFC3FFFFFF150000000000000000000000000000000000000000FFFFFF05FFFF
+      FF6DFFFFFFE2FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE1FFFFFF6CFFFF
+      FF05000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF01FFFFFF34FFFFFF51FFFFFF50FFFFFF33FFFFFF01000000000000
+      0000000000000000000000000000FFFF0000F81F0000E0070000C0030000C803
+      0000840100008381000083C1000083F1000081F1000080E10000C0C30000C003
+      0000E0070000F81F0000FFFF0000280000002000000040000000010020000000
+      0000801000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF05FFFFFF44FFFFFF7FFFFFFFA2FFFFFFAAFFFFFFAAFFFFFFA1FFFF
+      FF7EFFFFFF43FFFFFF0400000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF27FFFF
+      FFA1FFFFFFEEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFEEFFFFFFA0FFFFFF260000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF12FFFFFF93FFFFFFFAFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAFFFFFF91FFFFFF11000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000FFFFFF27FFFFFFD6FFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFD5FFFFFF260000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000FFFFFF51FFFFFFF6FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5FFFF
+      FF50000000000000000000000000000000000000000000000000000000000000
+      000000000000FFFFFF2FFFFFFFF4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFF1FFFFFF2A0000000000000000000000000000000000000000000000000000
+      0000FFFFFF17FFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE8FFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFE2FFFFFF1500000000000000000000000000000000000000000000
+      0000FFFFFF99FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4FFFFFF0CFFFFFF9BFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFF960000000000000000000000000000000000000000FFFF
+      FF21FFFFFFF9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF91FFFFFF04FFFF
+      FFA7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFF8FFFFFF2000000000000000000000000000000000FFFF
+      FF9DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF98FFFF
+      FF02FFFFFF97FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFECFFFFFF5DFFFFFFE1FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFF9B000000000000000000000000FFFFFF04FFFF
+      FFECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FF97FFFFFF02FFFFFF94FFFFFFFFFFFFFFEBFFFFFF2FFFFFFF03FFFFFFEBFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFEBFFFFFF030000000000000000FFFFFF41FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFF96FFFFFF02FFFFFF84FFFFFF2E0000000000000000FFFFFF9EFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF3E0000000000000000FFFFFF7EFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFF8900000000000000000000000000000000FFFFFF2BFFFF
+      FFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7B0000000000000000FFFFFFA2FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFEBFFFFFF300000000000000000000000000000000000000000FFFF
+      FF63FFFFFFB4FFFFFFF5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F0000000000000000FFFFFFB2FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFEAFFFFFF2E0000000000000000000000000000000000000000000000000000
+      000000000000FFFFFF11FFFFFF75FFFFFFE8FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000000000000000FFFFFFB1FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FF5AFFFFFF030000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000FFFFFF10FFFFFF93FFFFFF8DFFFFFFF4FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB00000000000000000FFFFFFA2FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFDFFFFFFFEBFFFFFFA3FFFFFF2E000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000FFFFFF1AFFFFFFEBFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9F0000000000000000FFFFFF7EFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFF6A0000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF1AFFFFFFD9FFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7B0000000000000000FFFFFF44FFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFB60000000000000000000000000000
+      0000000000000000000000000000FFFFFF15FFFFFFD2FFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF410000000000000000FFFFFF04FFFF
+      FFECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5FFFFFF0F00000000000000000000
+      00000000000000000000FFFFFF19FFFFFFD7FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFEBFFFFFF03000000000000000000000000FFFF
+      FF9DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF6B00000000000000000000
+      000000000000FFFFFF18FFFFFFD7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFF9B00000000000000000000000000000000FFFF
+      FF27FFFFFFFBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE0FFFFFF0D000000000000
+      0000FFFFFF17FFFFFFD6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFAFFFFFF25000000000000000000000000000000000000
+      0000FFFFFF99FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9300000000FFFF
+      FF17FFFFFFD5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFF9600000000000000000000000000000000000000000000
+      0000FFFFFF17FFFFFFE4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF90FFFFFF16FFFF
+      FFD4FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFE2FFFFFF1500000000000000000000000000000000000000000000
+      000000000000FFFFFF35FFFFFFF6FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5FFFFFFEAFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFF6FFFFFF320000000000000000000000000000000000000000000000000000
+      00000000000000000000FFFFFF52FFFFFFF7FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFF
+      FF50000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000FFFFFF41FFFFFFECFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBFFFFFF400000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000000FFFFFF1AFFFFFF9FFFFFFFFCFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCFFFFFF9DFFFFFF19000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000FFFFFF2BFFFF
+      FFA1FFFFFFEEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+      FFFFFFFFFFFFFFFFFFEEFFFFFFA0FFFFFF290000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000FFFFFF05FFFFFF44FFFFFF7FFFFFFFA2FFFFFFAAFFFFFFAAFFFFFFA1FFFF
+      FF7EFFFFFF43FFFFFF0400000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000000000000000000000FFFFFFFFFFFC3FFFFFC0
+      03FFFF0000FFFE00007FFC00003FF800001FF000000FE0800007E0400007C020
+      8003C0118003C00B8003C007C003800FE001801FFC01803FFE018007FF81C003
+      FF03C001FE03C001FC03C001F803E000F007E0006007F000400FF800001FFC00
+      003FFE00007FFF0000FFFFC003FFFFFC3FFFFFFFFFFF}
+    Images = imglstBrowers
+    ThumbButtons = <
+      item
+        ImageIndex = 0
+        Id = -1
+        ShowHint = True
+        Flags = []
+      end
+      item
+        ImageIndex = -1
+        Id = -1
+        ShowHint = False
+        Flags = []
+      end
+      item
+        ImageIndex = -1
+        Id = -1
+        ShowHint = False
+        Flags = []
+      end
+      item
+        ImageIndex = -1
+        Id = -1
+        ShowHint = False
+        Flags = []
+      end
+      item
+        ImageIndex = -1
+        Id = -1
+        ShowHint = False
+        Flags = []
+      end
+      item
+        ImageIndex = -1
+        Id = -1
+        ShowHint = False
+        Flags = []
+      end
+      item
+        ImageIndex = -1
+        Id = -1
+        ShowHint = False
+        Flags = []
+      end>
+    Left = 488
+    Top = 168
+  end
+  object IconFontsImageList1: TIconFontsImageList
+    FontName = 'Segoe MDL2 Assets'
+    FontColor = clWhite
+    IconFontItems = <
+      item
+        FontIconDec = 59155
+      end
+      item
+        FontIconDec = 60586
+      end
+      item
+        FontIconDec = 59165
+      end
+      item
+        FontIconDec = 59222
+      end
+      item
+        FontIconDec = 59248
+      end
+      item
+        FontIconDec = 59249
+      end
+      item
+        FontIconDec = 59332
+      end
+      item
+        FontIconDec = 59407
+      end
+      item
+        FontIconDec = 59157
+      end
+      item
+        FontIconDec = 59219
+      end
+      item
+        FontIconDec = 60725
+      end
+      item
+        FontIconDec = 59212
+      end
+      item
+        FontIconDec = 59251
+      end
+      item
+        FontIconDec = 59252
+      end
+      item
+        FontIconDec = 59280
+      end
+      item
+        FontIconDec = 59282
+      end
+      item
+        FontIconDec = 59276
+      end
+      item
+        FontIconDec = 59283
+      end
+      item
+        FontIconDec = 59308
+      end
+      item
+        FontIconDec = 59315
+      end
+      item
+        FontIconDec = 59332
+      end
+      item
+        FontIconDec = 59368
+      end
+      item
+        FontIconDec = 59380
+      end
+      item
+        FontIconDec = 59374
+      end
+      item
+        FontIconDec = 59383
+      end
+      item
+        FontIconDec = 59384
+      end
+      item
+        FontIconDec = 59422
+      end
+      item
+        FontIconDec = 59446
+      end
+      item
+        FontIconDec = 59449
+      end
+      item
+        FontIconDec = 59561
+      end
+      item
+        FontIconDec = 59453
+      end
+      item
+        FontIconDec = 59567
+      end
+      item
+        FontIconDec = 59657
+      end
+      item
+        FontIconDec = 59660
+      end
+      item
+        FontIconDec = 59661
+      end
+      item
+        FontIconDec = 59663
+      end
+      item
+        FontIconDec = 59664
+      end
+      item
+        FontIconDec = 59666
+      end
+      item
+        FontIconDec = 59718
+      end
+      item
+        FontIconDec = 59728
+      end
+      item
+        FontIconDec = 59641
+      end
+      item
+        FontIconDec = 59749
+      end
+      item
+        FontIconDec = 59752
+      end
+      item
+        FontIconDec = 59753
+      end
+      item
+        FontIconDec = 59865
+      end
+      item
+        FontIconDec = 59861
+      end
+      item
+        FontIconDec = 59893
+      end
+      item
+        FontIconDec = 59897
+      end
+      item
+        FontIconDec = 59928
+      end
+      item
+        FontIconDec = 59957
+      end
+      item
+        FontIconDec = 59977
+      end
+      item
+        FontIconDec = 59995
+      end
+      item
+        FontIconDec = 60038
+      end
+      item
+        FontIconDec = 60042
+      end
+      item
+        FontIconDec = 60049
+      end
+      item
+        FontIconDec = 60127
+      end
+      item
+        FontIconDec = 60165
+      end
+      item
+        FontIconDec = 60220
+      end
+      item
+        FontIconDec = 60305
+      end
+      item
+        FontIconDec = 60309
+      end
+      item
+        FontIconDec = 60319
+      end
+      item
+        FontIconDec = 60358
+      end
+      item
+        FontIconDec = 60421
+      end
+      item
+        FontIconDec = 60426
+      end
+      item
+        FontIconDec = 60437
+      end
+      item
+        FontIconDec = 60438
+      end
+      item
+        FontIconDec = 60453
+      end
+      item
+        FontIconDec = 60452
+      end
+      item
+        FontIconDec = 60455
+      end
+      item
+        FontIconDec = 60466
+      end
+      item
+        FontIconDec = 60494
+      end
+      item
+        FontIconDec = 60496
+      end
+      item
+        FontIconDec = 60497
+      end
+      item
+        FontIconDec = 60524
+      end
+      item
+        FontIconDec = 60554
+      end
+      item
+        FontIconDec = 60581
+      end
+      item
+        FontIconDec = 60586
+      end
+      item
+        FontIconDec = 60614
+      end
+      item
+        FontIconDec = 60725
+      end
+      item
+        FontIconDec = 60835
+      end
+      item
+        FontIconDec = 61076
+      end
+      item
+        FontIconDec = 61272
+      end
+      item
+        FontIconDec = 61328
+      end
+      item
+        FontIconDec = 61580
+      end
+      item
+        FontIconDec = 61666
+      end
+      item
+        FontIconDec = 61699
+      end
+      item
+        FontIconDec = 61782
+      end
+      item
+        FontIconDec = 61799
+      end
+      item
+        FontIconDec = 61824
+      end
+      item
+        FontIconDec = 61853
+      end
+      item
+        FontIconDec = 62022
+      end
+      item
+        FontIconDec = 62041
+      end
+      item
+        FontIconDec = 62135
+      end
+      item
+        FontIconDec = 62292
+      end
+      item
+        FontIconDec = 62341
+      end
+      item
+        FontIconDec = 62340
+      end
+      item
+        FontIconDec = 62342
+      end
+      item
+        FontIconDec = 62385
+      end
+      item
+        FontIconDec = 62634
+      end
+      item
+        FontIconDec = 63226
+      end
+      item
+        FontIconDec = 63664
+      end
+      item
+        FontIconDec = 63497
+      end
+      item
+        FontIconDec = 60249
+      end>
+    Left = 408
+    Top = 128
   end
 end
