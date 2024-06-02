@@ -10,6 +10,8 @@ object formLogViewer: TformLogViewer
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  StyleElements = [seFont, seClient]
+  OnCreate = FormCreate
   TextHeight = 15
   object StatusBar1: TStatusBar
     Left = 0
@@ -17,8 +19,6 @@ object formLogViewer: TformLogViewer
     Width = 1294
     Height = 19
     Panels = <>
-    ExplicitTop = 406
-    ExplicitWidth = 1288
   end
   object PageControl1: TPageControl
     Left = 0
@@ -29,8 +29,6 @@ object formLogViewer: TformLogViewer
     Align = alClient
     TabOrder = 1
     TabPosition = tpBottom
-    ExplicitWidth = 1288
-    ExplicitHeight = 376
     object TabSheet1: TTabSheet
       Caption = 'Apache HTTP Server Log'
       object LogViewer: TSynEdit
@@ -196,7 +194,6 @@ object formLogViewer: TformLogViewer
     Font.Style = []
     ParentFont = False
     Spacing = 0
-    ExplicitWidth = 1288
   end
   object SynUNIXShellScriptSyn1: TSynUNIXShellScriptSyn
     Left = 640

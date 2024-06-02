@@ -25,6 +25,7 @@ type
     mysqloutput: TSynEdit;
     TextEditor1: TTextEditor;
     procedure Action1Execute(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +46,11 @@ begin
     LogViewer.Lines.Clear;
     LogViewer.Lines.SaveToFile(ExtractFilePath(ParamStr(0))+'content\apache2\logs\error.log');
   end;
+end;
+
+procedure TformLogViewer.FormCreate(Sender: TObject);
+begin
+  EnableImmersiveDarkMode(True);
 end;
 
 end.
