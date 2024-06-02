@@ -29,19 +29,19 @@ uses
 type
   IProcess = interface
     ['{CC7EF860-0CCB-49BE-9376-5F47B3AD9BA0}']
+    function IsRunning: Boolean;
     function GetName: string;
-    procedure SetName(const Value: string);
-    property Name: string read GetName write SetName;
-  end;
-
-  TLaraProcesses = class(TInterfacedObject, IProcess)
-  private
-    function GetName: string;
-    procedure SetName(const Value: string);
-  public
+    function GetFullPath: string;
+    function GetPID: Integer;
+    property Running: Boolean read IsRunning;
+    property Name: string read GetName;
+    property FullPath: string read GetFullPath;
+    property PID: Integer read GetPID;
   end;
 
   TLaraProcess = class(DosCommand.TDosCommand)
+  private
+
   published
     property CommandLine; // command to execute
     property CurrentDir; // currentdir for childprocess (if empty -> currentdir is same like currentdir in parent process), by sirius
@@ -58,20 +58,49 @@ type
     property OnTerminateProcess; // event to ask for processtermination
  end;
 
+
+  TProcesos<T: IProcess> = class
+  private
+    FList: TList<T>;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    procedure Add(const AItem: T);
+    procedure Remove(const AItem: T);
+    function GetItems: TArray<T>;
+  end;
+
 implementation
 
 
 
-{ TLaraProcesses }
+{ TProcesos<T> }
 
-function TLaraProcesses.GetName: string;
+procedure TProcesos<T>.Add(const AItem: T);
 begin
-
+  FList.Add(AItem);
 end;
 
-procedure TLaraProcesses.SetName(const Value: string);
+constructor TProcesos<T>.Create;
 begin
+  inherited Create;
+  FList := TList<T>.Create;
+end;
 
+destructor TProcesos<T>.Destroy;
+begin
+  FList.Free;
+  inherited Destroy;
+end;
+
+function TProcesos<T>.GetItems: TArray<T>;
+begin
+  Result := FList.ToArray;
+end;
+
+procedure TProcesos<T>.Remove(const AItem: T);
+begin
+  FList.Remove(AItem);
 end;
 
 end.
